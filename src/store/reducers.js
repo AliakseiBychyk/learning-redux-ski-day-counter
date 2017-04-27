@@ -15,8 +15,8 @@ export const errors = (state=[], action) => {
   switch(action.type) {
     case C.ADD_ERROR :
       return [
-         ...state,
-         action.payload
+        ...state,
+        action.payload
       ]
     case C.CLEAR_ERROR : 
       return state.filter((message, i) => i !== action.payload)
@@ -31,10 +31,10 @@ export const allSkiDays = (state = [], action) => {
       const hasDay = state.some(skiDay => skiDay.date === action.payload.date)
       return (hasDay) ?
          state :
-         [
-           ...state,
-           skiDay(null, action)
-         ].sort((a, b) => new Date(b.date) - new Date(a.date))
+          [
+            ...state,
+            skiDay(null, action)
+          ].sort((a, b) => new Date(b.date) - new Date(a.date))
     case C.REMOVE_DAY :
       return state.filter(skiDay => skiDay.date !== action.payload)     
     default:
