@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "suggestions": "./node_modules/.bin/babel-node ./server --port 3333 --delay 500",
     "start": "./node_modules/.bin/babel-node ./src/",
     "dev": "./node_modules/.bin/webpack-dev-server"
   },
@@ -21,8 +22,11 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "isomorphic-fetch": "^2.2.1",
+    "minimist": "^1.2.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
   }
 }
-                     
