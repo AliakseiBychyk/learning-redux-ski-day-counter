@@ -1,5 +1,5 @@
 import C from './constants'
-import storeFactory from './store'
+import storeFactory from './store' // actually this is ./store/index.js 
 
 const initialState = (localStorage['redux-store']) ?
   JSON.parse(localStorage['redux-store']) :
@@ -43,20 +43,3 @@ store.dispatch({
     "backcountry": true
   }
 })
-
-// const store = createStore(appReducer)
-
-// const unsubscribeGoalLogger = store.subscribe(
-//   () => console.log(`  Goal:  ${store.getState().goal}`)
-// )
-
-// setInterval(() => {
-//   store.dispatch({
-//     type: C.SET_GOAL,
-//     payload: Math.floor(Math.random()* 100)
-//   })
-// }, 250)  
-
-// setTimeout(() => {
-//    unsubscribeGoalLogger()
-// }, 3000)
