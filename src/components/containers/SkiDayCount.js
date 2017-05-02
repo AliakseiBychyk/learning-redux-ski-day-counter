@@ -1,7 +1,7 @@
 import SkiDayCount from '../ui/SkiDayCount'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     total: state.allSkiDays.length,
     powder: state.allSkiDays.filter(day => day.powder).length,
