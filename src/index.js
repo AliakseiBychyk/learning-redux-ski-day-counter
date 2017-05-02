@@ -1,9 +1,31 @@
-import storeFactory from './store' // actually this is ./store/index.js
-import { suggestResortNames } from './actions'
+import C from './constants'
+import React from 'react'
+import { render } from 'react-dom'
+import routes from './routes'
+import sampleData from './initialState'
+
+const initialState = (localStorage['redux-store']) ?
+  JSON.parse(localStorage['redux-store']) :
+  sampleData
+
+const saveState = () =>
+  localStorage['redux-store'] = JSON.stringify(store.getState())
+
+window.React = React
+
+render(
+  routes,
+  document.getElementById('react-container')
+)  
 
 
-const store = storeFactory()
 
-store.dispatch(
-  suggestResortNames('hea')
-)
+// import storeFactory from './store' // actually this is ./store/index.js
+// import { suggestResortNames } from './actions'
+
+
+// const store = storeFactory()
+
+// store.dispatch(
+//   suggestResortNames('hea')
+// )
